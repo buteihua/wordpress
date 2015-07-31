@@ -1,1 +1,1 @@
-# WORDPRESS 测试站点
+# WORDPRESS 资讯站点测试
