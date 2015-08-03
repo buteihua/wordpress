@@ -20,10 +20,17 @@ get_header(); ?>
 		<div id="content" class="site-content" role="main">
 		<?php if ( have_posts() ) : ?>
 
-			<?php /* The loop */ ?>
+			<ul>
 			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'content', get_post_format() ); ?>
+				<li style="margin-top: 40px;">
+           
+                <div class="bd">
+                <h3 style="margin:11px 0"><a href="<?php the_permalink()?>"><?php echo the_title()?></a></h3>
+                <div class="cate-cont"><p><?php echo mb_strlen($cont = strip_tags(get_the_content())) > 120 ? mb_substr($cont, 0, 120) . '...' : $cont?></p></div>
+                </div>
+            </li>
 			<?php endwhile; ?>
+		</ul>
 
 			<?php twentythirteen_paging_nav(); ?>
 
